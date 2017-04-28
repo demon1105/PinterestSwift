@@ -165,11 +165,11 @@ class CHTCollectionViewWaterfallLayout : UICollectionViewLayout{
             /*
             * 1. Get section-specific metrics (minimumInteritemSpacing, sectionInset)
             */
-            var minimumInteritemSpacing : CGFloat
+            let minimumInteritemSpacing : CGFloat
             if let miniumSpaceing = self.delegate?.colletionView?(self.collectionView!, layout: self, minimumInteritemSpacingForSectionAtIndex: section){
                 minimumInteritemSpacing = miniumSpaceing
             }else{
-                minimumInteritemSpacing = self.minimumColumnSpacing
+                minimumInteritemSpacing = self.minimumInteritemSpacing
             }
             
             let width = self.collectionView!.frame.size.width - sectionInset.left - sectionInset.right
